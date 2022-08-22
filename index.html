@@ -14,6 +14,13 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
 
@@ -28,33 +35,51 @@
       }
     </style>
   </head>
-  <body class="bg-neutral-900 text-neutral-100">
-    <main class="main-grid">
+  <body class="text-neutral-100 bg-neutral-900">
+    <main class="main-grid | p-400">
       <h1 class="visually-hidden">NFT Preview Card Component</h1>
-      <p>Hello</p>
+
+      <div class="card | bg-neutral-800 br-300">
+        <img
+          src="./images/image-equilibrium.jpg"
+          alt="Equilibrium"
+          class="card-image | br-300"
+        />
+
+        <h2 class="card-heading | fw-bold fs-500">Equilibrium #3429</h2>
+
+        <div class="card-content | fw-light text-primary-400">
+          <p>Our Equilibrium collection promotes balance and calm.</p>
+        </div>
+
+        <div class="card-flex | text-accent-400">
+          <img
+            src="./images/icon-ethereum.svg"
+            alt="Ethereum Icon"
+            class="card-icon"
+          />
+          0.041 ETH
+        </div>
+
+        <div class="card-flex | text-primary-400 fw-light">
+          <img
+            src="./images/icon-clock.svg"
+            alt="Clock Icon"
+            class="card-icon"
+          />
+          3 days left
+        </div>
+
+        <div class="card-user | text-primary-400 fw-light">
+          <img
+            src="./images/image-avatar.png"
+            alt="Avatar"
+            class="card-avatar"
+          />
+          Creation of <a href="#">Jules Wyvern</a>
+        </div>
+      </div>
     </main>
-
-    <div class="swatches">
-      <div class="bg-primary-400">&nbsp;</div>
-
-      <div class="bg-accent-400">&nbsp;</div>
-
-      <div class="bg-neutral-100">&nbsp;</div>
-      <div class="bg-neutral-700">&nbsp;</div>
-      <div class="bg-neutral-800">&nbsp;</div>
-      <div class="bg-neutral-900">&nbsp;</div>
-
-      <div class="bg-grey-100">&nbsp;</div>
-      <div class="bg-grey-200">&nbsp;</div>
-      <div class="bg-grey-300">&nbsp;</div>
-      <div class="bg-grey-400">&nbsp;</div>
-      <div class="bg-grey-500">&nbsp;</div>
-      <div class="bg-grey-600">&nbsp;</div>
-      <div class="bg-grey-700">&nbsp;</div>
-      <div class="bg-grey-800">&nbsp;</div>
-      <div class="bg-grey-900">&nbsp;</div>
-      <div class="bg-grey-1000">&nbsp;</div>
-    </div>
 
     <div class="attribution | p-400">
       Challenge by
