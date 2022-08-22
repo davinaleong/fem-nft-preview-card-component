@@ -72,6 +72,8 @@
   --size-1000: 6rem;
   --size-1100: 7rem;
 
+  --transition: all 0.3s ease-in-out;
+
   --column-spacing: var(--size-500);
 }
 /** Root - End **/
@@ -141,6 +143,7 @@ a {
 
   color: var(--clr-link);
   text-decoration: none;
+  transition: var(--transition);
 }
 
 a:where(:hover, :focus, :focus-visible) {
@@ -149,21 +152,48 @@ a:where(:hover, :focus, :focus-visible) {
 
 /** Content - Card **/
 .card {
-  --width: var(88em);
+  --width: 350px;
 
-  width: var(--width);
+  max-width: var(--width);
   padding: var(--size-400);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--size-400);
+  isolation: isolate;
+  border-radius: var(--size-300);
+  cursor: pointer;
 }
 
-.card-image {
+.card-image-container {
+  position: relative;
   grid-column: 1 / span 2;
+  overflow: hidden;
+  border-radius: var(--size-200);
+}
+
+.card-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  z-index: 1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card-image-icon {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .card-heading {
   grid-column: 1 / span 2;
+  transition: var(--transition);
 }
 
 .card-content {
@@ -177,6 +207,10 @@ a:where(:hover, :focus, :focus-visible) {
   display: flex;
   gap: var(--size-200);
   align-items: center;
+}
+
+.card-time {
+  justify-self: end;
 }
 
 .card-user {
@@ -197,6 +231,22 @@ a:where(:hover, :focus, :focus-visible) {
   height: var(--avatar-size);
   border-radius: 50%;
   border: thin solid var(--clr-neutral-100);
+}
+
+.card:where(:hover, :focus, :focus-visible) .card-image-container::before {
+  opacity: 1;
+}
+
+.card:where(:hover, :focus, :focus-visible) .card-image-icon {
+  opacity: 1;
+}
+
+.card:where(:hover, :focus, :focus-visible) .card-heading {
+  color: var(--clr-accent-400);
+}
+
+.card:where(:hover, :focus, :focus-visible) a {
+  color: var(--clr-accent-400);
 }
 
 /** Content - End **/
